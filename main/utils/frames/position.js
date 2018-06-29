@@ -16,6 +16,7 @@ module.exports = (tray, window) => {
 
   const trayBounds = tray.getBounds()
   const isWin = platform() === 'win32'
+  const isLinux = platform() === 'linux'
 
   if (trayBoundsCache && displayAreaCache) {
     // Compare only the object props
@@ -48,7 +49,7 @@ module.exports = (tray, window) => {
     // Use the display's work area instead.
     verticalPosition = displayArea.y + 5
 
-    if (screen.getMenuBarHeight() === 0) {
+    if (!isLinux && screen.getMenuBarHeight() === 0) {
       verticalPosition += 22
     }
     const left = horizontalPosition + windowSize[0]
