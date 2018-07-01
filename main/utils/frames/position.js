@@ -38,7 +38,7 @@ module.exports = (tray, window) => {
 
   if (notMacOS) {
     horizontalPosition = displayArea.x + displayArea.width - windowSize[0]
-    verticalPosition = displayArea.y + displayArea.height - windowSize[1]
+    verticalPosition = displayArea.y
   } else {
     const trayCenter = trayBounds.x + trayBounds.width / 2
     horizontalPosition = trayCenter - windowSize[0] / 2
